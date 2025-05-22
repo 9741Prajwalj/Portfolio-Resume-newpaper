@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,6 +97,62 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-paper text-newspaper-text;
+    font-family: 'Times New Roman', Times, serif;
+  }
+}
+
+@layer components {
+  .newspaper-title {
+    font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+    @apply text-newspaper-title font-bold text-4xl md:text-5xl lg:text-6xl text-center tracking-tight;
+  }
+  
+  .newspaper-headline {
+    font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+    @apply text-newspaper-heading font-bold text-2xl md:text-3xl leading-tight;
+  }
+  
+  .newspaper-subheadline {
+    @apply text-newspaper-subheading font-semibold text-lg md:text-xl leading-snug;
+  }
+  
+  .newspaper-column {
+    @apply text-sm leading-relaxed column-count-1 md:column-count-2 gap-6 text-justify;
+  }
+  
+  .newspaper-page {
+    @apply relative bg-paper shadow-xl overflow-hidden;
+    min-height: 90vh;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+  }
+  
+  .newspaper-page-content {
+    @apply p-6 md:p-10 relative;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .page-turn-btn {
+    @apply absolute top-4 flex items-center justify-center cursor-pointer z-10
+           bg-paper-aged p-2 rounded-full shadow-md hover:bg-paper-fold transition-colors;
+  }
+  
+  .page-turn-btn-right {
+    @apply right-4;
+  }
+  
+  .page-turn-btn-left {
+    @apply left-4;
+  }
+  
+  .newspaper-divider {
+    @apply h-[1px] bg-paper-fold my-4;
+  }
+  
+  .shadow-page {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   }
 }
