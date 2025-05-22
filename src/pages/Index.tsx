@@ -27,53 +27,53 @@ const Dashboard = () => {
         <h3 className="newspaper-subheadline">FEATURED THIS EDITION</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-          <Card className="p-4 bg-paper border border-paper-fold hover:shadow-lg transition-shadow">
-            <h4 className="font-bold mb-2">Educational Background</h4>
+          <Card className="p-4 border border-paper-fold dashboard-card">
+            <h4 className="font-bold mb-2 text-newspaper-accent1">Educational Background</h4>
             <p className="text-sm mb-3">
               Discover my academic journey and the qualifications I've earned throughout my career.
             </p>
             <Link 
               to="/education" 
-              className="text-sm font-bold hover:underline"
+              className="text-sm font-bold text-newspaper-accent3 hover:underline"
             >
               Continue reading →
             </Link>
           </Card>
           
-          <Card className="p-4 bg-paper border border-paper-fold hover:shadow-lg transition-shadow">
-            <h4 className="font-bold mb-2">Professional Skills</h4>
+          <Card className="p-4 border border-paper-fold dashboard-card">
+            <h4 className="font-bold mb-2 text-newspaper-accent1">Professional Skills</h4>
             <p className="text-sm mb-3">
               An in-depth look at my technical abilities, soft skills, and areas of expertise.
             </p>
             <Link 
               to="/skills" 
-              className="text-sm font-bold hover:underline"
+              className="text-sm font-bold text-newspaper-accent3 hover:underline"
             >
               Continue reading →
             </Link>
           </Card>
           
-          <Card className="p-4 bg-paper border border-paper-fold hover:shadow-lg transition-shadow">
-            <h4 className="font-bold mb-2">Notable Projects</h4>
+          <Card className="p-4 border border-paper-fold dashboard-card">
+            <h4 className="font-bold mb-2 text-newspaper-accent1">Notable Projects</h4>
             <p className="text-sm mb-3">
               Explore the noteworthy projects I've completed and the impact they've made.
             </p>
             <Link 
               to="/projects" 
-              className="text-sm font-bold hover:underline"
+              className="text-sm font-bold text-newspaper-accent3 hover:underline"
             >
               Continue reading →
             </Link>
           </Card>
           
-          <Card className="p-4 bg-paper border border-paper-fold hover:shadow-lg transition-shadow">
-            <h4 className="font-bold mb-2">Get in Touch</h4>
+          <Card className="p-4 border border-paper-fold dashboard-card">
+            <h4 className="font-bold mb-2 text-newspaper-accent1">Get in Touch</h4>
             <p className="text-sm mb-3">
               Find out how to contact me for opportunities, collaborations, or inquiries.
             </p>
             <Link 
               to="/contact" 
-              className="text-sm font-bold hover:underline"
+              className="text-sm font-bold text-newspaper-accent3 hover:underline"
             >
               Continue reading →
             </Link>
@@ -82,8 +82,8 @@ const Dashboard = () => {
         
         <div className="newspaper-divider"></div>
         
-        <div className="text-center">
-          <p className="text-sm italic">
+        <div className="newspaper-quote">
+          <p className="text-sm">
             "Turn the page to begin exploring my portfolio newspaper."
           </p>
         </div>

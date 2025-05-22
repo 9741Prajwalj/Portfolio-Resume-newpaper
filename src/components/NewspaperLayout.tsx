@@ -72,20 +72,31 @@ export const NewspaperLayout: React.FC<NewspaperLayoutProps> = ({
     }
   };
 
+  const getPageColor = () => {
+    switch(currentPageIndex) {
+      case 0: return "bg-gradient-to-br from-paper to-paper-sepia/80";
+      case 1: return "bg-gradient-to-br from-paper to-paper-blue/50";
+      case 2: return "bg-gradient-to-br from-paper to-paper-green/50";
+      case 3: return "bg-gradient-to-br from-paper to-paper-yellow/50";
+      case 4: return "bg-gradient-to-br from-paper to-paper-pink/50";
+      default: return "bg-gradient-to-br from-paper to-paper-sepia/80";
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-paper-aged p-2 md:p-6">
-      <div className="w-full bg-paper border-b-2 border-paper-fold p-3 md:p-4 shadow-md mb-4">
+    <div className="min-h-screen bg-paper-aged p-2 md:p-6 bg-paper-texture">
+      <div className="w-full bg-paper border-b-4 border-double border-paper-fold p-3 md:p-4 shadow-newspaper mb-4">
         <div className="newspaper-title">{title}</div>
         <div className="flex justify-between items-center text-sm mt-2">
-          <span>Vol. 1, No. 1</span>
-          <span>{date}</span>
+          <span className="text-newspaper-accent1 font-semibold">Vol. 1, No. 1</span>
+          <span className="text-newspaper-accent2 font-semibold">{date}</span>
         </div>
       </div>
       
       <div className="newspaper-page shadow-page">
         <div 
           ref={pageRef} 
-          className="newspaper-page-content"
+          className={`newspaper-page-content ${getPageColor()}`}
         >
           {!isAnimating && (
             <>
@@ -93,6 +104,7 @@ export const NewspaperLayout: React.FC<NewspaperLayoutProps> = ({
                 onClick={() => handlePageTurn("backward")} 
                 className="page-turn-btn page-turn-btn-left"
                 disabled={isAnimating}
+                aria-label="Previous page"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
@@ -101,6 +113,7 @@ export const NewspaperLayout: React.FC<NewspaperLayoutProps> = ({
                 onClick={() => handlePageTurn("forward")} 
                 className="page-turn-btn page-turn-btn-right"
                 disabled={isAnimating}
+                aria-label="Next page"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>
@@ -108,9 +121,11 @@ export const NewspaperLayout: React.FC<NewspaperLayoutProps> = ({
           )}
           
           <div className="mb-4 text-center">
-            <h2 className="newspaper-headline">
-              {pages[currentPageIndex]?.label || "Dashboard"}
-            </h2>
+            <div className="inline-block border-b-2 border-newspaper-accent1 pb-1 px-6">
+              <h2 className="newspaper-headline">
+                {pages[currentPageIndex]?.label || "Dashboard"}
+              </h2>
+            </div>
           </div>
           
           <div className="newspaper-divider"></div>

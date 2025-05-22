@@ -66,13 +66,22 @@ export default {
 				paper: {
 					DEFAULT: '#f5f2e8',
 					aged: '#e8e0cc',
-					fold: '#d6ceb8'
+					fold: '#d6ceb8',
+					sepia: '#F4ECD8',
+					yellow: '#FFF9C4',
+					pink: '#FFE4E1',
+					blue: '#E3F2FD',
+					green: '#E8F5E9'
 				},
 				newspaper: {
 					title: '#1a1a1a',
 					text: '#333333',
 					heading: '#222222',
-					subheading: '#444444'
+					subheading: '#444444',
+					accent1: '#8B4513', // Brown for a classic newspaper feel
+					accent2: '#800000', // Maroon for highlights
+					accent3: '#284b63', // Blue for contrasting elements
+					highlight: '#fffacd' // Light yellow for highlighting
 				}
 			},
 			borderRadius: {
@@ -110,12 +119,17 @@ export default {
 				'fade-in': 'fade-in 0.5s ease-in-out forwards'
 			},
 			backgroundImage: {
-				'paper-texture': "url('/paper-texture.png')"
+				'paper-texture': "url('/paper-texture.png')",
+				'paper-gradient': 'linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)'
 			},
 			columnCount: {
 				1: '1',
 				2: '2',
 				3: '3'
+			},
+			boxShadow: {
+				'newspaper': '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+				'newspaper-hover': '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)'
 			}
 		}
 	},

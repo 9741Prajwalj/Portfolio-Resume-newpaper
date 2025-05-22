@@ -54,7 +54,7 @@ const Contact = () => {
         <div className="newspaper-divider"></div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="p-4 bg-paper border border-paper-fold col-span-2">
+          <Card className="p-4 bg-gradient-to-br from-paper to-paper-blue/30 border border-paper-fold col-span-2">
             <h3 className="newspaper-subheadline mb-4">GET IN TOUCH</h3>
             
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -68,7 +68,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="bg-paper-aged border-paper-fold"
+                    className="bg-paper-aged/50 border-paper-fold focus:border-newspaper-accent3"
                   />
                 </div>
                 <div className="space-y-2">
@@ -81,7 +81,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="bg-paper-aged border-paper-fold"
+                    className="bg-paper-aged/50 border-paper-fold focus:border-newspaper-accent3"
                   />
                 </div>
               </div>
@@ -95,7 +95,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="bg-paper-aged border-paper-fold"
+                  className="bg-paper-aged/50 border-paper-fold focus:border-newspaper-accent3"
                 />
               </div>
               
@@ -109,13 +109,13 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="bg-paper-aged border-paper-fold"
+                  className="bg-paper-aged/50 border-paper-fold focus:border-newspaper-accent3"
                 />
               </div>
               
               <Button 
                 type="submit"
-                className="bg-newspaper-heading text-paper hover:bg-newspaper-text"
+                className="bg-newspaper-accent3 text-white hover:bg-newspaper-accent1"
               >
                 Send Message
               </Button>
@@ -123,8 +123,8 @@ const Contact = () => {
           </Card>
           
           <div className="space-y-4">
-            <Card className="p-4 bg-paper border border-paper-fold">
-              <h4 className="font-bold text-newspaper-heading mb-3">Contact Information</h4>
+            <Card className="p-4 bg-gradient-to-br from-paper to-paper-yellow/30 border border-paper-fold contact-card">
+              <h4 className="font-bold text-newspaper-accent1 mb-3">Contact Information</h4>
               <div className="space-y-2 text-sm">
                 <p><strong>Email:</strong><br />contact@example.com</p>
                 <p><strong>Phone:</strong><br />(123) 456-7890</p>
@@ -132,8 +132,8 @@ const Contact = () => {
               </div>
             </Card>
             
-            <Card className="p-4 bg-paper border border-paper-fold">
-              <h4 className="font-bold text-newspaper-heading mb-3">Social Media</h4>
+            <Card className="p-4 bg-gradient-to-br from-paper to-paper-pink/30 border border-paper-fold contact-card">
+              <h4 className="font-bold text-newspaper-accent1 mb-3">Social Media</h4>
               <div className="space-y-2 text-sm">
                 <p><strong>LinkedIn:</strong><br />linkedin.com/username</p>
                 <p><strong>GitHub:</strong><br />github.com/username</p>
@@ -145,8 +145,8 @@ const Contact = () => {
         
         <div className="newspaper-divider"></div>
         
-        <div className="text-center">
-          <p className="text-sm italic">
+        <div className="newspaper-quote">
+          <p className="text-sm">
             "I look forward to hearing from you and potentially working together on future endeavors."
           </p>
         </div>
