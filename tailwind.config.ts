@@ -111,8 +111,24 @@ export default {
 			},
 			backgroundImage: {
 				'paper-texture': "url('/paper-texture.png')"
+			},
+			columnCount: {
+				1: '1',
+				2: '2',
+				3: '3'
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		function({ addUtilities, theme }: any) {
+			const newUtilities = {};
+			Object.entries(theme('columnCount') || {}).forEach(([key, value]) => {
+				(newUtilities as any)[`.column-count-${key}`] = {
+					'column-count': value
+				};
+			});
+			addUtilities(newUtilities);
+		}
+	],
 } satisfies Config;

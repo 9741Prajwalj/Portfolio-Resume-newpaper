@@ -118,7 +118,14 @@
   }
   
   .newspaper-column {
-    @apply text-sm leading-relaxed column-count-1 md:column-count-2 gap-6 text-justify;
+    @apply text-sm leading-relaxed gap-6 text-justify;
+    column-count: 1;
+  }
+  
+  @media (min-width: 768px) {
+    .newspaper-column {
+      column-count: 2;
+    }
   }
   
   .newspaper-page {
